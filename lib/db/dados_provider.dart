@@ -38,7 +38,6 @@ class DadosProvider extends ChangeNotifier {
     }
     await carregarTudo();
   }
-
   Future<void> removerRegistro(String tabela, int id) async {
     switch (tabela) {
       case 'economias':

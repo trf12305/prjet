@@ -7,7 +7,6 @@ class BancoDados {
 
   BancoDados._init();
 
-  // Inicialização do banco
   Future<Database> get database async {
     if (_database != null) return _database!;
     _database = await _initDB('travel_planner.db');
@@ -29,7 +28,6 @@ class BancoDados {
     );
   }
 
-  // Criação das tabelas
   Future _createDB(Database db, int version) async {
     await db.execute('''
       CREATE TABLE IF NOT EXISTS economias (
@@ -68,9 +66,6 @@ class BancoDados {
     ''');
   }
 
-  // ==========================
-  // ===== ECONOMIAS =========
-  // ==========================
   Future<int> inserirEconomia(Map<String, dynamic> data) async {
     final db = await instance.database;
     return await db.insert('economias', data);
@@ -86,9 +81,6 @@ class BancoDados {
     return await db.delete('economias', where: 'id = ?', whereArgs: [id]);
   }
 
-  // ==========================
-  // ===== GASTOS =============
-  // ==========================
   Future<int> inserirGasto(Map<String, dynamic> data) async {
     final db = await instance.database;
     return await db.insert('gastos', data);
@@ -104,11 +96,9 @@ class BancoDados {
     return await db.delete('gastos', where: 'id = ?', whereArgs: [id]);
   }
 
-  // ==========================
-  // ===== TRANSPORTES ========
-  // ==========================
   Future<int> inserirTransporte(Map<String, dynamic> data) async {
     final db = await instance.database;
+
     return await db.insert('transportes', data);
   }
 
@@ -122,9 +112,6 @@ class BancoDados {
     return await db.delete('transportes', where: 'id = ?', whereArgs: [id]);
   }
 
-  // ==========================
-  // ===== ROTEIROS ===========
-  // ==========================
   Future<int> inserirRoteiro(Map<String, dynamic> data) async {
     final db = await instance.database;
     return await db.insert('roteiros', data);
@@ -139,10 +126,6 @@ class BancoDados {
     final db = await instance.database;
     return await db.delete('roteiros', where: 'id = ?', whereArgs: [id]);
   }
-
-  // ==========================
-  // ===== LIMPAR TUDO ========
-  // ==========================
   Future<void> limparTudo() async {
     final db = await instance.database;
     await db.delete('economias');

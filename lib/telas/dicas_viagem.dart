@@ -25,7 +25,7 @@ class DicasViagemSection extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
-          return Text('Erro ao carregar dicas: ${snapshot.error}');
+          return Text('Erro ao carregar as dicas Tente Novamente Mais Tarde: ${snapshot.error}');
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
           return const Text('Nenhuma dica disponível.');
         }
@@ -48,11 +48,11 @@ class DicasViagemSection extends StatelessWidget {
               ),
               child: ListTile(
                 title: Text(
-                  dica['titulo'],
+                  dica['Titulo'],
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.orange),
                 ),
-                subtitle: Text(dica['descricao']),
+                subtitle: Text(dica['Descricao']),
               ),
             )),
           ],

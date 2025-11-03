@@ -17,7 +17,7 @@ class _TelaTransporteState extends State<TelaTransporte> {
   final _dataController = TextEditingController();
 
   final Map<String, Map<String, dynamic>> _transportes = {
-    'Avião': {'custo': 750.0, 'tempo': '2h'},
+    'Avião': {'custo': 700.0, 'tempo': '2h'},
     'Ônibus': {'custo': 1000.0, 'tempo': '5h'},
     'Carro': {'custo': 300.0, 'tempo': '4h'},
     'Trem': {'custo': 200.0, 'tempo': '3h'},
@@ -35,7 +35,6 @@ class _TelaTransporteState extends State<TelaTransporte> {
     final tempo = _tempoController.text.trim();
     final data = _dataController.text.trim();
 
-    // validação básica da data (dd/mm/aaaa)
     final regexData = RegExp(r'^\d{2}/\d{2}/\d{4}$');
 
     if (transporte == null || custo == null || tempo.isEmpty || !regexData.hasMatch(data)) {

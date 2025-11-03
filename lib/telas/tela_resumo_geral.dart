@@ -32,18 +32,14 @@ class TelaResumoGeral extends StatelessWidget {
 
     if (confirmar != true) return;
 
-    // Apaga tudo do banco
     await BancoDados.instance.limparTudo();
 
-    // Recarrega provider
     await context.read<DadosProvider>().carregarTudo();
 
-    // Mostra aviso
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text("Dados zerados! Nova viagem iniciada.")),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<DadosProvider>();

@@ -33,7 +33,6 @@ class MeuApp extends StatelessWidget {
           ),
         ),
 
-        // ✅ Localização pt_BR corretamente configurada
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

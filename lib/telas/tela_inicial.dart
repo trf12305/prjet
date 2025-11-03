@@ -29,7 +29,7 @@ class _TelaInicialState extends State<TelaInicial> {
     "Gastos",
     "Transporte",
     "Roteiro",
-    "Resumo Geral", // novo título
+    "Resumo Geral",
   ];
 
   void _aoSelecionar(int indice) {

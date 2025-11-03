@@ -9,7 +9,6 @@ class BarraNavegacao extends StatelessWidget {
     required this.indiceSelecionado,
     required this.aoSelecionar,
   });
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(

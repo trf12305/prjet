@@ -48,11 +48,11 @@ class DicasViagemSection extends StatelessWidget {
               ),
               child: ListTile(
                 title: Text(
-                  dica['Titulo'],
+                  dica['titulo'],
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.orange),
                 ),
-                subtitle: Text(dica['Descricao']),
+                subtitle: Text(dica['descricao']),
               ),
             )),
           ],
